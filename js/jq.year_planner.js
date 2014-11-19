@@ -84,8 +84,9 @@
 			var $calTip = $("<div class='tooltip-content' id='"+id+"-content-"+clashes+"' >"+event.note + "</div>");
 			$calEvent.css({top: pos.top, left: pos.left, width: (event.length * 24) + "px" });
 			this.registeredEvents.push({day:event.day, month:event.month, length:event.length});
-			$('#yearView').append($calEvent);
-			$('#yearView').append($calTip);
+			var v = $('#'+this.element.id);
+			v.append($calEvent);
+			v.append($calTip);
 		},
 		_doesEventWrapOverMonth : function(event) {
 				var dtm = new Date(this.today.getFullYear(), event.month, event.day);
@@ -116,7 +117,7 @@
 			var pos = this.getDatePosition(date.day, date.month);
 			var $calEvent = $("<div class='bankHoliday'>BH</div>");
 			$calEvent.css({ top: pos.top, left: pos.left, width: "23px" });
-			$('#yearView').append($calEvent);
+			$('#'+this.element.id).append($calEvent);
 		},
 		bindToolTips : function() {
 			$(".tooltip-target").ezpz_tooltip();

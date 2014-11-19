@@ -40,4 +40,4 @@ Events are what the Year Planner was created to display
 * Background defines the colour of the event's block on the planner
 * Text defines the colour of the Caption's text
 
-See index.html for a demo
+See index.html for a demo, and css\jq.year_panner.css to change the bland/awful styling.
