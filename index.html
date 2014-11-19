@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" href="css/jq.year_planner.css" rel="stylesheet" />
+</head>
+<body>
+	<div class='yearViewContainer'>
+		<h1 id='yearHeading' class='yearViewHeading'></h1>
+		<div id='yearView' class='yearViewDiv'></div>
+		<div id='yearPlugin' class='yearViewDiv'></div>
+	</div>
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="js/jquery.ezpz_tooltip.min.js"></script>
+	<script src="js/date.js"></script>
+	<script src="js/jq.year_planner.js"></script>
+	<script>
+		var YearModel = {
+			BankHolidays : [{day:1,month:0},{day:4,month:0},{day:2,month:3},{day:5,month:3},{day:3,month:4},{day:31,month:4},{day:30,month:7},{day:24,month:11},{day:27,month:11},{day:28,month:11}],
+			Events : [{day:6, month:5, length:15, caption:'Holiday', note:'Just a holiday booking', background:'#F00', text:'#0F0'},
+				{day:26, month:8, length:14, caption:'Celebrations', note:'Wrapping a month', background:'#F0F', text:'#FFF'},
+				{day:11, month:5, length:5, caption:'Clashing', note:'At the same time as holiday', background:'#0FF', text:'#000'}]
+		};
+
+		$(function() {
+			$("#yearPlugin").yearPlanner();
+		});
+
+		$(document).ready(function() {
+			var hols = YearModel.BankHolidays;
+			var events = YearModel.Events;
+			for (var h in hols) $("#yearPlugin").yearPlanner('addBankHoliday', hols[h]);
+			for (var e in events) $("#yearPlugin").yearPlanner('addEvent', events[e]);
+		});
+	</script>
+</body>
+</html>
