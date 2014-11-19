@@ -41,4 +41,4 @@ Events are what the Year Planner was created to display
 * Text defines the colour of the Caption's text
 
 See index.html for a demo, and css\jq.year_panner.css to change the bland/awful styling.
-(http://i.imgur.com/yPc4aEQ.png)
+![Screenshot hasn't displayed](http://i.imgur.com/yPc4aEQ.png)
